@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মারকাযুল কারীম ইন্টারন্যাশনাল মাদ্রাসা</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;display=swap');
+        
+        body {
+            font-family: 'Noto Sans Bengali', 'Inter', system-ui, sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0f766e 0%, #134e4b 100%);
+        }
+        
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 700;
+            color: #134e4b;
+        }
+        
+        .nav-active {
+            color: #0f766e;
+            font-weight: 600;
+        }
+        
+        .madrasa-name {
+            font-size: 2.75rem;
+            line-height: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        
+        .meal-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .meal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        .department-card {
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .department-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .islamic-pattern {
+            background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill-rule=%22evenodd%22%3E%3Cpath fill=%22%230f766e%22 fill-opacity=%22005%22 d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-10V8h-2v16h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 6v-4H4v4H0v2h4v4h2V8h4V6H6z%22/%3E%3C/g%3E%3C/svg%27');
+            background-size: 60px 60px;
+        }
+        
+        .nav-link {
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            color: #0f766e;
+        }
+        
+        .golden-accent {
+            color: #d4af77;
+        }
+        
+        .modern-shadow {
+            box-shadow: 0 10px 15px -3px rgb(15 118 110 / 0.1), 0 4px 6px -4px rgb(15 118 110 / 0.1);
+        }
+        
+        .admission-badge {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-14 h-14 bg-gradient-to-br from-emerald-700 to-emerald-900 rounded-2xl flex items-center justify-center shadow-inner">
+                        <i class="fa-solid fa-mosque text-white text-4xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-2xl text-emerald-900">মারকাযুল কারীম</h1>
+                        <p class="text-xs text-emerald-700 font-medium tracking-wider">ইন্টারন্যাশনাল মাদ্রাসা</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-8">
+                    <a href="#about" class="nav-link font-medium text-gray-700 hover:text-emerald-700">আমাদের সম্পর্কে</a>
+                    <a href="#programs" class="nav-link font-medium text-gray-700 hover:text-emerald-700">বিভাগসমূহ</a>
+                    <a href="#meals" class="nav-link font-medium text-gray-700 hover:text-emerald-700">খাবারের রুটিন</a>
+                    <a href="#contact" class="nav-link font-medium text-gray-700 hover:text-emerald-700">যোগাযোগ</a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-4">
+                    <a href="https://wa.me/8801760191392" target="_blank" 
+                       class="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl flex items-center gap-x-2 text-sm font-semibold transition-colors">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>হোয়াটসঅ্যাপ</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-emerald-800">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 pt-16 pb-20 md:pt-20 md:pb-24">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7">
+                    <div class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full mb-6">
+                        <div class="w-2 h-2 bg-emerald-300 rounded-full animate-pulse"></div>
+                        <span class="font-medium text-sm tracking-wider">২০২৫ শিক্ষাবর্ষ</span>
+                    </div>
+                    
+                    <h1 class="madrasa-name text-white leading-tight mb-3">
+                        মারকাযুল কারীম<br>
+                        <span class="text-emerald-200">ইন্টারন্যাশনাল মাদ্রাসা</span>
+                    </h1>
+                    
+                    <p class="text-emerald-100 text-xl max-w-md mb-8">
+                        আধুনিক শিক্ষা ও ইসলামী মূল্যবোধের সমন্বয়ে গড়ে তোলা একটি আন্তর্জাতিক মানের মাদ্রাসা
+                    </p>
+                    
+                    <!-- Admission Badge -->
+                    <div class="flex items-center gap-x-4">
+                        <div class="admission-badge inline-flex items-center bg-white text-emerald-900 px-6 py-3 rounded-3xl shadow-xl">
+                            <div class="flex items-center gap-x-3">
+                                <i class="fa-solid fa-graduation-cap text-3xl text-emerald-700"></i>
+                                <div>
+                                    <p class="font-extrabold text-xl leading-none">ভর্তি চলছে</p>
+                                    <p class="text-xs text-emerald-700">২০২৫ সেশন</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                                class="px-6 py-3 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-3xl transition-colors flex items-center gap-x-2">
+                            <span>ভর্তি ফর্ম পূরণ করুন</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-5">
+                    <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-3xl">
+                        <div class="flex items-center gap-x-4 mb-5">
+                            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center">
+                                <i class="fa-solid fa-mosque text-emerald-800 text-4xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-lg">আন্তর্জাতিক মানের শিক্ষা</p>
+                                <p class="text-emerald-200 text-sm">২০০+ শিক্ষার্থী • ১৫ জন শিক্ষক</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-3 text-center">
+                            <div class="bg-white/10 rounded-2xl p-3">
+                                <div class="text-2xl font-bold">১০০%</div>
+                                <div class="text-xs">হেফজ সাফল্য</div>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl p-3">
+                                <div class="text-2xl font-bold">৪৫+</div>
+                                <div class="text-xs">হাফেজ</div>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl p-3">
+                                <div class="text-2xl font-bold">১২</div>
+                                <div class="text-xs">দেশের শিক্ষার্থী</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-7xl mx-auto px-6 pt-20">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5">
+                <div class="sticky top-24">
+                    <span class="text-emerald-700 font-semibold text-sm tracking-[3px]">আমাদের পরিচয়</span>
+                    <h2 class="section-header mt-2">আধুনিকতার সাথে ইসলামী শিক্ষার সমন্বয়</h2>
+                    <p class="mt-5 text-gray-600 text-[15px]">
+                        মারকাযুল কারীম ইন্টারন্যাশনাল মাদ্রাসা ঢাকার যাত্রাবাড়ী এলাকায় অবস্থিত একটি আধুনিক ও আন্তর্জাতিক মানের ইসলামী শিক্ষা প্রতিষ্ঠান। 
+                        আমরা শিক্ষার্থীদের নূরানী, নাজেরা, হেফজুল কুরআন এবং আধুনিক শিক্ষার সমন্বয়ে গড়ে তুলি।
+                    </p>
+                    
+                    <div class="mt-8 flex items-center gap-x-4">
+                        <div>
+                            <span class="block text-sm text-gray-500">প্রতিষ্ঠিত</span>
+                            <span class="font-bold text-3xl text-emerald-800">২০১৭</span>
+                        </div>
+                        <div class="w-px h-12 bg-gray-200"></div>
+                        <div>
+                            <span class="block text-sm text-gray-500">অভিজ্ঞতা</span>
+                            <span class="font-bold text-3xl text-emerald-800">৮ বছর</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-7">
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div class="flex gap-x-4">
+                            <i class="fa-solid fa-globe text-3xl text-emerald-600 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">আন্তর্জাতিক মান</h4>
+                                <p class="text-sm text-gray-600">আধুনিক পাঠ্যক্রম ও প্রযুক্তি ব্যবহার</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-4">
+                            <i class="fa-solid fa-user-graduate text-3xl text-emerald-600 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">যোগ্য শিক্ষকমণ্ডলী</h4>
+                                <p class="text-sm text-gray-600">অভিজ্ঞ ও প্রশিক্ষিত আলেম ও শিক্ষক</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-4">
+                            <i class="fa-solid fa-home text-3xl text-emerald-600 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold">নিরাপদ আবাসন</h4>
+                                <p class="text-sm text-gray-600">ভিআইপি মানের খাবার ও থাকার ব্যবস্থা</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs / Departments -->
+    <section id="programs" class="max-w-7xl mx-auto px-6 pt-20 pb-10">
+        <div class="text-center mb-12">
+            <span class="text-emerald-700 font-semibold text-sm tracking-widest">আমাদের শিক্ষা কার্যক্রম</span>
+            <h2 class="section-header mt-2">বিভাগসমূহ</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Nurani -->
+            <div class="department-card bg-white p-7 rounded-3xl border border-gray-100 hover:border-emerald-200 modern-shadow">
+                <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-5">
+                    <i class="fa-solid fa-child text-emerald-700 text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl text-emerald-900">নূরানী বিভাগ</h3>
+                <p class="mt-3 text-gray-600 text-sm">৫-১২ বছর বয়সী শিশুদের জন্য মৌলিক ইসলামী শিক্ষা, আরবি ভাষা, আকাইদ ও আদব শিক্ষা।</p>
+                <div class="mt-5 pt-5 border-t flex items-center text-xs">
+                    <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-medium">বয়স: ৫-১২ বছর</span>
+                </div>
+            </div>
+            
+            <!-- Nazera -->
+            <div class="department-card bg-white p-7 rounded-3xl border border-gray-100 hover:border-emerald-200 modern-shadow">
+                <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-5">
+                    <i class="fa-solid fa-book text-emerald-700 text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl text-emerald-900">নাজেরা বিভাগ</h3>
+                <p class="mt-3 text-gray-600 text-sm">সঠিক উচ্চারণসহ কুরআন শিক্ষা, তাজবীদ ও মাখরাজ শিক্ষা। প্রতিদিনের অনুশীলনের মাধ্যমে দক্ষতা বৃদ্ধি।</p>
+                <div class="mt-5 pt-5 border-t flex items-center text-xs">
+                    <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-medium">সময়: ৩ বছর</span>
+                </div>
+            </div>
+            
+            <!-- Hifz -->
+            <div class="department-card bg-white p-7 rounded-3xl border border-gray-100 hover:border-emerald-200 modern-shadow">
+                <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-5">
+                    <i class="fa-solid fa-quran text-emerald-700 text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl text-emerald-900">হেফজুল কুরআন</h3>
+                <p class="mt-3 text-gray-600 text-sm">আন্তর্জাতিক মানের হেফজুল কুরআন বিভাগ। সম্পূর্ণ কুরআন মুখস্থ করানো হয় আধুনিক পদ্ধতিতে।</p>
+                <div class="mt-5 pt-5 border-t flex items-center text-xs">
+                    <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-medium">সময়: ২-৩ বছর</span>
+                </div>
+            </div>
+            
+            <!-- Revision -->
+            <div class="department-card bg-white p-7 rounded-3xl border border-gray-100 hover:border-emerald-200 modern-shadow">
+                <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-5">
+                    <i class="fa-solid fa-redo text-emerald-700 text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl text-emerald-900">রিভিশন বিভাগ</h3>
+                <p class="mt-3 text-gray-600 text-sm">হেফজ শেষ করা শিক্ষার্থীদের জন্য নিয়মিত রিভিশন ও তিলাওয়াত প্রশিক্ষণ। আন্তর্জাতিক প্রতিযোগিতার প্রস্তুতি।</p>
+                <div class="mt-5 pt-5 border-t flex items-center text-xs">
+                    <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-medium">সময়: ১ বছর</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Meal Routine -->
+    <section id="meals" class="max-w-7xl mx-auto px-6 pt-10 pb-16">
+        <div class="bg-emerald-900 rounded-3xl p-8 md:p-12 text-white">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+                <div>
+                    <span class="px-4 py-1 bg-emerald-700 text-emerald-200 rounded-full text-sm font-semibold">ভিআইপি সুবিধা</span>
+                    <h2 class="text-3xl font-bold mt-3">তিনবেলা খাবারের রুটিন</h2>
+                    <p class="text-emerald-200 mt-2">পুষ্টিকর ও স্বাস্থ্যসম্মত খাবারের ব্যবস্থা</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <div class="inline-flex items-center gap-x-2 bg-emerald-700 px-4 py-2 rounded-2xl text-sm">
+                        <i class="fa-solid fa-utensils"></i>
+                        <span>প্রতিদিন তাজা ও স্বাস্থ্যকর</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-5">
+                <!-- Breakfast -->
+                <div class="meal-card bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-3xl">
+                    <div class="flex items-center gap-x-3 mb-4">
+                        <div class="w-10 h-10 bg-emerald-700 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-sun text-white"></i>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-lg">সকালের নাস্তা</span>
+                            <span class="block text-xs text-emerald-300">সকাল ৭:৩০ টা</span>
+                        </div>
+                    </div>
+                    <ul class="text-sm space-y-2 text-emerald-100">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> পনির, ডিম ও পরোটা</li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> দুধ ও ফলের সালাদ</li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> মধু ও শস্যজাত খাবার</li>
+                    </ul>
+                </div>
+                
+                <!-- Lunch -->
+                <div class="meal-card bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-3xl">
+                    <div class="flex items-center gap-x-3 mb-4">
+                        <div class="w-10 h-10 bg-emerald-700 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-cloud-sun text-white"></i>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-lg">দুপুরের খাবার</span>
+                            <span class="block text-xs text-emerald-300">দুপুর ১:৩০ টা</span>
+                        </div>
+                    </div>
+                    <ul class="text-sm space-y-2 text-emerald-100">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> ভাত, ডাল ও তরকারি</li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> মাছ/মুরগি/গরুর মাংস (পর্যায়ক্রমে)</li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> সালাদ ও দই</li>
+                    </ul>
+                </div>
+                
+                <!-- Dinner -->
+                <div class="meal-card bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-3xl">
+                    <div class="flex items-center gap-x-3 mb-4">
+                        <div class="w-10 h-10 bg-emerald-700 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-moon text-white"></i>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-lg">রাতের খাবার</span>
+                            <span class="block text-xs text-emerald-300">রাত ৮:০০ টা</span>
+                        </div>
+                    </div>
+                    <ul class="text-sm space-y-2 text-emerald-100">
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> ভাত, খিচুড়ি বা রুটি</li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> সবজি ও মাংসের তরকারি</li>
+                        <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> ফল ও দুধ</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <p class="text-xs text-emerald-300">* প্রতি সপ্তাহে বিশেষ খাবার ও ফলের মেনু থাকে</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-12 gap-8">
+            <!-- Contact Info -->
+            <div class="md:col-span-5">
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 modern-shadow">
+                    <h3 class="font-bold text-2xl mb-5">যোগাযোগ করুন</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-x-4">
+                            <div class="mt-1">
+                                <i class="fa-solid fa-map-marker-alt text-emerald-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">ঠিকানা</p>
+                                <p class="text-sm text-gray-600">দক্ষিণ কাজলা নয়ানগর, আলফালাহ জামে মসজিদ সংলগ্ন,<br>দনিয়া, যাত্রাবাড়ী, ঢাকা-১২৩৬</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-x-4">
+                            <div class="mt-1">
+                                <i class="fa-brands fa-whatsapp text-emerald-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">হোয়াটসঅ্যাপ</p>
+                                <a href="https://wa.me/8801760191392" target="_blank" 
+                                   class="text-emerald-700 hover:text-emerald-900 font-semibold transition-colors">
+                                    +880 1760-191392
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <button onclick="showAdmissionModal()" 
+                                    class="w-full mt-4 py-3.5 bg-emerald-700 hover:bg-emerald-800 transition-colors text-white font-semibold rounded-2xl flex items-center justify-center gap-x-2">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span>ভর্তির জন্য যোগাযোগ করুন</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Admission Form Quick -->
+            <div class="md:col-span-7">
+                <div class="bg-white border border-gray-100 p-8 rounded-3xl modern-shadow">
+                    <h3 class="font-bold text-xl mb-1">দ্রুত ভর্তি অনুসন্ধান</h3>
+                    <p class="text-sm text-gray-600 mb-6">নিচের ফর্ম পূরণ করুন, আমরা আপনার সাথে যোগাযোগ করবো</p>
+                    
+                    <form id="quick-form" onsubmit="submitQuickForm(event)">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <input type="text" id="student-name" placeholder="শিক্ষার্থীর নাম" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-600 text-sm" required>
+                            </div>
+                            <div>
+                                <input type="tel" id="phone" placeholder="মোবাইল নম্বর" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-600 text-sm" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <select id="department" class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-600 text-sm" required>
+                                <option value="">বিভাগ নির্বাচন করুন</option>
+                                <option value="নূরানী">নূরানী বিভাগ</option>
+                                <option value="নাজেরা">নাজেরা বিভাগ</option>
+                                <option value="হেফজুল কুরআন">হেফজুল কুরআন</option>
+                                <option value="রিভিশন">রিভিশন বিভাগ</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="mt-4 w-full py-3 bg-emerald-800 hover:bg-emerald-900 transition-colors text-white font-semibold rounded-2xl text-sm">
+                            অনুসন্ধান জমা দিন
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-950 text-white/80">
+        <div class="max-w-7xl mx-auto px-6 py-10">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-y-4">
+                <div>
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-mosque text-emerald-600"></i>
+                        <span class="font-semibold text-white">মারকাযুল কারীম ইন্টারন্যাশনাল মাদ্রাসা</span>
+                    </div>
+                    <p class="text-xs mt-1">© ২০২৫ সর্বস্বত্ব সংরক্ষিত</p>
+                </div>
+                
+                <div class="text-center text-xs">
+                    দক্ষিণ কাজলা নয়ানগর, আলফালাহ জামে মসজিদ সংলগ্ন, দনিয়া, যাত্রাবাড়ী, ঢাকা-১২৩৬
+                </div>
+                
+                <div class="flex items-center gap-x-4">
+                    <a href="https://wa.me/8801760191392" target="_blank" class="flex items-center gap-x-2 text-sm hover:text-white transition-colors">
+                        <i class="fa-brands fa-whatsapp"></i> 
+                        <span>+880 1760-191392</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admission Modal -->
+    <div id="admission-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100]">
+        <div class="bg-white w-full max-w-md mx-4 rounded-3xl p-7">
+            <div class="flex justify-between items-center mb-5">
+                <h3 class="font-bold text-xl">ভর্তি আবেদন ফর্ম</h3>
+                <button onclick="hideAdmissionModal()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fa-solid fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <form id="admission-form" onsubmit="submitAdmissionForm(event)">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">শিক্ষার্থীর নাম</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-2xl text-sm" required>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">বয়স</label>
+                            <input type="number" class="w-full px-4 py-3 border border-gray-300 rounded-2xl text-sm" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">লিঙ্গ</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-2xl text-sm" required>
+                                <option>ছেলে</option>
+                                <option>মেয়ে</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-1">মোবাইল নম্বর</label>
+                        <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-2xl text-sm" value="+880 " required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-1">বিভাগ নির্বাচন করুন</label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-2xl text-sm" required>
+                            <option value="">বিভাগ বেছে নিন</option>
+                            <option>নূরানী বিভাগ</option>
+                            <option>নাজেরা বিভাগ</option>
+                            <option>হেফজুল কুরআন</option>
+                            <option>রিভিশন বিভাগ</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-1">অতিরিক্ত তথ্য</label>
+                        <textarea class="w-full px-4 py-3 border border-gray-300 rounded-2xl text-sm" rows="2" placeholder="যেকোনো বিশেষ প্রয়োজন থাকলে লিখুন"></textarea>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex gap-x-3">
+                    <button type="button" onclick="hideAdmissionModal()" 
+                            class="flex-1 py-3 border border-gray-300 text-gray-700 font-semibold rounded-2xl hover:bg-gray-100">
+                        বাতিল
+                    </button>
+                    <button type="submit" 
+                            class="flex-1 py-3 bg-emerald-700 text-white font-semibold rounded-2xl hover:bg-emerald-800 transition-colors">
+                        আবেদন জমা দিন
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind Script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#0f766e');
+        }
+        
+        // Mobile Menu
+        function initMobileMenu() {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            
+            mobileBtn.addEventListener('click', function() {
+                const nav = document.createElement('div');
+                nav.className = `fixed inset-0 bg-black/60 z-50 flex md:hidden`;
+                
+                nav.innerHTML = `
+                    <div class="w-72 bg-white h-full p-6">
+                        <div class="flex justify-between items-center mb-8">
+                            <div class="flex items-center gap-x-2">
+                                <i class="fa-solid fa-mosque text-emerald-800 text-3xl"></i>
+                                <span class="font-bold">মারকাযুল কারীম</span>
+                            </div>
+                            <button class="text-3xl text-gray-400">&times;</button>
+                        </div>
+                        
+                        <div class="space-y-1">
+                            <a href="#about" class="block px-4 py-3 text-gray-700 hover:bg-emerald-50 rounded-xl">আমাদের সম্পর্কে</a>
+                            <a href="#programs" class="block px-4 py-3 text-gray-700 hover:bg-emerald-50 rounded-xl">বিভাগসমূহ</a>
+                            <a href="#meals" class="block px-4 py-3 text-gray-700 hover:bg-emerald-50 rounded-xl">খাবারের রুটিন</a>
+                            <a href="#contact" class="block px-4 py-3 text-gray-700 hover:bg-emerald-50 rounded-xl">যোগাযোগ</a>
+                        </div>
+                        
+                        <div class="mt-8 pt-6 border-t">
+                            <a href="https://wa.me/8801760191392" target="_blank" 
+                               class="block w-full py-3 bg-emerald-700 text-white text-center rounded-2xl font-medium">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> হোয়াটসঅ্যাপে যোগাযোগ
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(nav);
+                
+                nav.querySelector('button').addEventListener('click', () => {
+                    nav.remove();
+                });
+                
+                // Close on nav click
+                nav.addEventListener('click', function(e) {
+                    if (e.target === nav) nav.remove();
+                });
+            });
+        }
+        
+        // Admission Modal
+        function showAdmissionModal() {
+            document.getElementById('admission-modal').classList.remove('hidden');
+            document.getElementById('admission-modal').classList.add('flex');
+        }
+        
+        function hideAdmissionModal() {
+            const modal = document.getElementById('admission-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function submitAdmissionForm(e) {
+            e.preventDefault();
+            
+            const modal = document.getElementById('admission-modal');
+            
+            modal.innerHTML = `
+                <div class="bg-white w-full max-w-md mx-4 rounded-3xl p-8 text-center">
+                    <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto">
+                        <i class="fa-solid fa-check-circle text-emerald-600 text-5xl"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mt-5">আবেদন জমা হয়েছে!</h3>
+                    <p class="text-gray-600 mt-2">আমাদের কর্তৃপক্ষ শীঘ্রই আপনার সাথে যোগাযোগ করবেন।</p>
+                    
+                    <button onclick="hideAdmissionModal()" 
+                            class="mt-8 px-8 py-3 bg-emerald-700 text-white rounded-2xl font-semibold">
+                        বুঝতে পেরেছি
+                    </button>
+                </div>
+            `;
+            
+            // Auto close after 4 seconds
+            setTimeout(() => {
+                if (modal) {
+                    modal.classList.remove('flex');
+                    modal.classList.add('hidden');
+                    // Reset modal content
+                    location.reload();
+                }
+            }, 4500);
+        }
+        
+        function submitQuickForm(e) {
+            e.preventDefault();
+            
+            const button = e.target.querySelector('button');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = `<span>প্রসেসিং...</span>`;
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.innerHTML = `আবেদন গৃহীত হয়েছে ✓`;
+                button.classList.remove('bg-emerald-800');
+                button.classList.add('bg-emerald-600');
+                
+                setTimeout(() => {
+                    alert("আপনার অনুসন্ধান গৃহীত হয়েছে! আমরা ২৪ ঘণ্টার মধ্যে আপনার সাথে যোগাযোগ করবো।");
+                    e.target.reset();
+                    button.innerHTML = originalText;
+                    button.classList.remove('bg-emerald-600');
+                    button.classList.add('bg-emerald-800');
+                    button.disabled = false;
+                }, 1200);
+            }, 1800);
+        }
+        
+        // Smooth scroll for nav links
+        function initSmoothScroll() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Close mobile nav if open
+                        const mobileNav = document.querySelector('.fixed.inset-0.bg-black\\/60');
+                        if (mobileNav) mobileNav.remove();
+                    }
+                });
+            });
+        }
+        
+        // Initialize everything
+        function initializeWebsite() {
+            initializeTailwind();
+            initMobileMenu();
+            initSmoothScroll();
+            
+            // Add subtle animation to admission badge
+            const badge = document.querySelector('.admission-badge');
+            if (badge) {
+                setInterval(() => {
+                    badge.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        badge.style.transform = 'scale(1)';
+                    }, 800);
+                }, 4000);
+            }
+            
+            // Keyboard ESC to close modal
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") {
+                    const modal = document.getElementById('admission-modal');
+                    if (!modal.classList.contains('hidden')) {
+                        modal.classList.remove('flex');
+                        modal.classList.add('hidden');
+                    }
+                }
+            });
+            
+            console.log('%c[Madrasa Website] Professional website initialized successfully.', 'color:#166534');
+        }
+        
+        // Boot the website
+        window.onload = initializeWebsite;
+    </script>
+</body>
+</html>
